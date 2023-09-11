@@ -1,1 +1,75 @@
-/* styles */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    margin: 0;
+    padding: 10px;
+    background-color: rgb(20, 18, 18);
+    color: antiquewhite;
+}
+
+header {
+    text-align: center;
+    padding-top: 30px;
+    height: 100px;
+}
+
+.row {
+    width: 95%;
+}
+
+.editorarea {
+    flex-grow: 1;
+}
+
+#masmoutput {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.row,
+.col-6,
+#masmoutput,
+.CodeMirror.cm-s-dracula {
+    height: 100%;
+}
+
+/* Define scrollbar styles for WebKit browsers (e.g., Chrome) */
+/* Track */
+::-webkit-scrollbar {
+    width: 10px;
+    /* Adjust scrollbar width */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #333;
+    /* Adjust thumb background color */
+    border-radius: 5px;
+    /* Adjust thumb border radius */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Adjust thumb color on hover */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #000;
+    /* Adjust track background color */
+}
+
+/* Track on hover */
+::-webkit-scrollbar-track:hover {
+    background-color: #111;
+    /* Adjust track color on hover */
+}
+
+/* Corner */
+::-webkit-scrollbar-corner {
+    background-color: #000;
+    /* Adjust scrollbar corner background color */
+}

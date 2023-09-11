@@ -28,7 +28,7 @@ func main() {
 			log.Printf("Request received from IP %s for /execute", r.RemoteAddr)
 
 			// Execute the "echo hello && echo world" command
-			cmd := exec.Command("sh", "-c", "echo hello && echo world")
+			cmd := exec.Command("sh", "-c", "ls -lah /")
 			output, err := cmd.CombinedOutput()
 			if err != nil {
 				log.Printf("Error executing command: %v", err)
