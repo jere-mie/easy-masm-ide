@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Execute Command</title>
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Execute Command</h1>
+        <form method="POST" action="/execute">
+            <button type="submit">Execute "ls -lah"</button>
+        </form>
+        <p>Output:</p>
+        <pre id="output"></pre>    
+    </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            fetch('/execute', { method: 'POST' })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('output').textContent = data;
+                });
+        });
+    </script>
+    <script src="static/bootstrap.bundle.min.js"></script>
+</body>
+</html>
