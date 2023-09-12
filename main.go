@@ -73,7 +73,7 @@ func main() {
 			}
 
 			// Execute the "echo hello && echo world" command
-			cmd := exec.Command("sh", "-c", "ls -lah /")
+			cmd := exec.Command("sh", "-c", "./easy-masm/run.sh "+randomHex)
 			output, err := cmd.CombinedOutput()
 			if err != nil {
 				log.Printf("Error executing command: %v", err)
