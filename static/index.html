@@ -54,11 +54,10 @@ END main
     <script src="static/codemirror/gas.js"></script>
     <script src="static/codemirror/closebrackets.js"></script>
     <script src="static/codemirror/matchbrackets.js"></script>
+    <script src="static/mousetrap.min.js"></script>
 
     <script>
         var editorconf = {
-            // mode: "text/x-csharp",
-            // mode: "text/x-java",
             mode: {name: "gas", architecture: "x86"},
             theme: "dracula",
             lineNumbers: true,
@@ -82,8 +81,12 @@ END main
                 .then(res => res.text())
                 .then(data => resultElem.innerHTML = data)
                 .catch(error => console.error(error));
-
         }
+        
+        Mousetrap.bind('ctrl+enter', (e) => {
+            submitMasm();
+            return false;
+        });
     </script>
 
     <script src="static/bootstrap.bundle.min.js"></script>
