@@ -1,18 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Execute Command</title>
+    <title>MASM32 IDE</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="MASM32 Online" />
+    <meta property="og:title" content="MASM32 Online IDE"/>
+    <meta property="og:description" content="An online IDE for developing MASM32 programs, created by Jeremie Bornais" />
+    <meta property="og:type" content="website" />
+
     <link rel="stylesheet" href="static/bootstrap.min.css">
     <link rel="stylesheet" href="static/codemirror/codemirror.css">
     <link rel="stylesheet" href="static/codemirror/dracula.css">
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <header><h1>Easy-MASM Online IDE <button class="btn btn-lg btn-primary" onclick="submitMasm()">Run</button></h1></header>
-    <div class="editorarea mt-5">
+    <header>
+        <div class="header-left">
+            <h3>MASM32 Online IDE</h3>
+        </div>
+        <div class="header-center">
+            <button class="runBtn" onclick="submitMasm()">> Run</button>
+        </div>
+        <div class="header-left">
+            <p style="text-align: right;">
+                <a class="btn btn-light mt-3" href="https://github.com/jere-mie/easy-masm-ide" target="_blank">Created With ♥ by Jeremie Bornais</a>
+            </p>
+        </div>
+    </header>
+    <div class="editorarea mt-3">
         <div class="row">
             <div class="col-6">
-                <textarea name="masminput" id="masminput" style="width: 90%;">
+                <textarea name="masminput" id="masminput" style="width: 100%;">
 TITLE
 
 ; Name: 
@@ -41,10 +61,10 @@ main PROC
 
 main ENDP
 END main
-                </textarea><br>
+</textarea><br>
             </div>
             <div class="col-6">
-                <pre id="masmoutput"></pre>
+                <pre id="masmoutput">Click "Run" for MASM output</pre>
             </div>
         </div>
     </div>

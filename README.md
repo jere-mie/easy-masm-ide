@@ -25,5 +25,5 @@ To change the port, simply modify the `EASY_MASM_IDE_PORT` environment variable.
 ## Future Plans
 
 - [ ] Containerize with Docker
-- [ ] Add Windows support
+- [x] Add Windows support
 - [ ] Add support for specifying input

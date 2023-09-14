@@ -1,25 +1,51 @@
 body {
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 95vh;
     margin: 0;
     padding: 10px;
-    background-color: rgb(20, 18, 18);
+    background-color: #0e1525;
     color: antiquewhite;
 }
 
 header {
-    text-align: center;
-    padding-top: 30px;
     height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header-left {
+    flex: 1;
+}
+
+.header-center {
+    flex: 1;
+    text-align: center;
+}
+
+.runBtn {
+    font-size: 1.4rem;
+    background-color: #044a10;
+    color: #bfffca;
+    padding: 5px 7px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.runBtn:hover {
+    background-color: #009118;
 }
 
 .row {
-    width: 95%;
+    width: 100%;
 }
 
 .editorarea {
-    flex-grow: 1;
+    height: calc(95vh - 60px);
 }
 
 #masmoutput {
@@ -33,6 +59,7 @@ header {
 #masmoutput,
 .CodeMirror.cm-s-dracula {
     height: 100%;
+    max-height: calc(95vh - 60px);
 }
 
 /* Define scrollbar styles for WebKit browsers (e.g., Chrome) */

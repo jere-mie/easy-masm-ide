@@ -18,6 +18,10 @@ func main() {
 		port = "8080" // Default to port 8080 if EASY_MASM_IDE_PORT is not set
 	}
 
+    operatingSystem := os.Getenv("GOOS")
+
+
+
 	// Serve the HTML page with a button at the root path ("/")
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodGet {
@@ -72,8 +76,15 @@ func main() {
 				return
 			}
 
+			var cmd *exec.Cmd
+
 			// Execute the "echo hello && echo world" command
-			cmd := exec.Command("sh", "-c", "timeout 5 ./easy-masm/run.sh "+randomHex)
+			if operatingSystem == "windows" {
+				cmd = exec.Command("cmd", "/c", ".\\easy-masm\\run.bat "+randomHex)
+			} else { //linux/unix
+				cmd = exec.Command("sh", "-c", "timeout 5 ./easy-masm/run.sh "+randomHex)
+			}
+			
 			output, err := cmd.CombinedOutput()
 			if err != nil {
 				log.Printf("Error executing command: %v", err)
