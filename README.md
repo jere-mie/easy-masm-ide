@@ -6,9 +6,8 @@ A simple online IDE for MASM32 programs, built with Go
 
 To run easy-masm-ide locally, you'll need:
 
-- A Linux based system (Windows support will come soon)
-- [Wine](https://www.winehq.org/)
 - A modern version of [Go](https://go.dev/)
+- If you're a Linux user, you'll also need [Wine](https://www.winehq.org/)
 
 To run the application, simply run the command:
 
@@ -16,7 +15,7 @@ To run the application, simply run the command:
 go run main.go
 ```
 
-And the server will start on port 8080.
+And the server will start on port [8080](localhost:8080).
 
 ### Running on a Different Port
 
@@ -24,6 +23,10 @@ To change the port, simply modify the `EASY_MASM_IDE_PORT` environment variable.
 
 ## Future Plans
 
-- [ ] Containerize with Docker
 - [x] Add Windows support
+- [ ] Containerize with Docker
 - [ ] Add support for specifying input
+
+## Known Bugs
+
+- MASM source files on Windows are not deleted after being run
